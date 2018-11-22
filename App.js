@@ -3,11 +3,12 @@ import {
   StyleSheet,
   Text,
   View,
+  Image,
     Button
 } from 'react-native';
 
 import ToastExample from './ToastExample';
-
+import CockView from './CockView';
 import { NativeModules } from "react-native";
 
 export default class App extends Component {
@@ -78,6 +79,8 @@ export default class App extends Component {
                                 });
 
                         }}/>
+
+                        <CockView time={10}/>
                 </View>
             );
         }
@@ -96,5 +99,9 @@ const styles = StyleSheet.create({
     fontSize: 20,
     textAlign: 'center',
     margin: 10,
-  }
+  },
+  image: {
+    width:100,
+    height:100
+    }
  });

@@ -8,4 +8,4 @@
 2. 通过Callbacks原生想js传递数据
 3. 原生界面与RN界面互相调用
 4. Activity中既有原生控件又有RN控件
-
+5. RN中实现类似Android中的帧动画及坑
