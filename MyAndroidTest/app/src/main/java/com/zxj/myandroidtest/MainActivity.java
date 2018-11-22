@@ -14,8 +14,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onSkipClick(View view) {
-//        startActivity(new Intent(this,ReactPageActivity.class));
-        startActivity(new Intent(this,RNPageActivity.class));
+        startActivity(new Intent(this,ReactPageActivity.class));
+//        startActivity(new Intent(this,RNPageActivity.class));
     }
 
     public void onSkipRNClick(View view){
