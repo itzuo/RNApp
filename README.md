@@ -13,3 +13,7 @@
 **效果图：**
 
 ![app.gif](./img/app.gif)
+
+6. 混合开发中实现原生传入的参数跳转不同RN界面
+
+![app.gif](./img/app.gif)

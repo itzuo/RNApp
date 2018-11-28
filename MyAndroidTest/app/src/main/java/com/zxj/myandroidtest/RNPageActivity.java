@@ -27,7 +27,9 @@ public class RNPageActivity extends AppCompatActivity implements DefaultHardware
                 .setInitialLifecycleState(LifecycleState.RESUMED)
                 .build();*/
         // 这个"RNApp"名字一定要和我们在index.js中注册的名字保持一致AppRegistry.registerComponent()
-        mReactRootView.startReactApplication(mReactInstanceManager, "RNApp", null);
+        Bundle bundle = getIntent().getExtras();
+//        bundle.putString("pageIndex","Page1");
+        mReactRootView.startReactApplication(mReactInstanceManager, "RNApp", bundle);
 
         setContentView(mReactRootView);
     }

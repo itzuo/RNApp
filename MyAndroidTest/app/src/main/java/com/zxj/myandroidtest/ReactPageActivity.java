@@ -1,9 +1,11 @@
 package com.zxj.myandroidtest;
 
 import android.content.Intent;
+import android.widget.Toast;
 
 import com.facebook.react.ReactActivity;
-
+import com.facebook.react.ReactActivityDelegate;
+import com.facebook.react.ReactRootView;
 import java.util.concurrent.ArrayBlockingQueue;
 
 public class ReactPageActivity extends ReactActivity{
@@ -15,7 +17,7 @@ public class ReactPageActivity extends ReactActivity{
      */
     @Override
     protected String getMainComponentName() {
-        return "RNApp";
+        return "App";
     }
 
     /**
@@ -38,4 +40,15 @@ public class ReactPageActivity extends ReactActivity{
             mQueue.add("没有回调...");
         }
     }
+
+    /*@Override
+    protected ReactActivityDelegate createReactActivityDelegate() {
+        return new ReactActivityDelegate(this, getMainComponentName()) {
+            @Override
+            protected ReactRootView createRootView() {
+                Toast.makeText(ReactPageActivity.this,"createReactActivityDelegate",Toast.LENGTH_SHORT).show();
+                return new ReactRootView(ReactPageActivity.this);
+            }
+        };
+    }*/
 }
