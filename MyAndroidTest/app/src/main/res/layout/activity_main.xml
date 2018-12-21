@@ -10,15 +10,15 @@
     <EditText
         android:id="@+id/et"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="onNavigationClick"
-        android:textAllCaps="false"
         android:text="跳转Navigation界面"
+        android:textAllCaps="false"
         tools:layout_editor_absoluteX="203dp"
         tools:layout_editor_absoluteY="114dp" />
 
@@ -38,4 +38,14 @@
         android:text="跳转混合界面"
         tools:layout_editor_absoluteX="203dp"
         tools:layout_editor_absoluteY="114dp" />
+
+    <com.zxj.myandroidtest.view.FocusedTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:ellipsize="marquee"
+        android:text="这是原生控件的跑马灯效果----->啦啦啦啦啦啦阿拉啦啦啦"
+        android:textColor="#ff0000"
+        android:textSize="30sp" />
+
 </LinearLayout>

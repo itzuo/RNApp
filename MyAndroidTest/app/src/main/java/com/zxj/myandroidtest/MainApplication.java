@@ -23,7 +23,7 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
-          new CustomToastPackage()); // <-- 添加这一行，类名替换成你的Package类的名字.
+          new CustomPackage()); // <-- 添加这一行，类名替换成你的Package类的名字.
     }
 
     @Override

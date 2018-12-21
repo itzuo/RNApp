@@ -3,12 +3,19 @@ package com.zxj.myandroidtest;
 import android.app.Activity;
 import android.content.Intent;
 import android.text.TextUtils;
+import android.widget.Toast;
 
 import com.facebook.react.bridge.Callback;
 import com.facebook.react.bridge.JSApplicationIllegalArgumentException;
+import com.facebook.react.bridge.Promise;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.annotation.Nullable;
 
 public class IntentModule extends ReactContextBaseJavaModule {
     public IntentModule(ReactApplicationContext reactContext) {
@@ -81,5 +88,30 @@ public class IntentModule extends ReactContextBaseJavaModule {
         }catch (Exception e){
             errorBack.invoke(e.getMessage());
         }
+    }
+
+    /**
+     * 使用Promise机制向RN页面传数据
+     * @param msg
+     * @param promise
+     */
+    @ReactMethod
+    public void rnCallNativePromiss(String msg,Promise promise){
+        try {
+            Toast.makeText(getCurrentActivity(), msg, Toast.LENGTH_SHORT).show();
+            String componentName = getCurrentActivity().getComponentName().toString();
+            promise.resolve(componentName);
+        }catch (Exception e){
+            promise.reject("500",e.getMessage());
+        }
+    }
+
+    @Nullable
+    @Override
+    public Map<String, Object> getConstants() {
+        Map<String, Object> constants = new HashMap<>();
+        constants.put("name","小杰");
+        constants.put("msg","原生的数据");
+        return constants;
     }
 }

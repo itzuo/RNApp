@@ -6,6 +6,7 @@
     "start": "node node_modules/react-native/local-cli/cli.js start"
   },
   "dependencies": {
+    "prop-types": "^15.6.2",
     "react": "^16.6.1",
     "react-native": "^0.57.5",
     "react-native-image-animation": "^1.0.2",
