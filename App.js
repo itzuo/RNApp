@@ -4,6 +4,8 @@ import {
     Text,
     View,
     NativeModules,
+    ImageBackground,
+    Image,
     Button
 } from 'react-native';
 
@@ -48,20 +50,25 @@ export default class App extends Component {
                 </View>
             );
         } else {
+            let user=NativeModules.IntentModule;
             return (
                 <View style={styles.container}>
                     <FocusedTextView
                         style={{width: 500, height: 100}}
                         size={30}
                         text={"这是RN调用原生控件的跑马灯效果----->啦啦啦啦啦啦阿拉啦啦啦"}/>
+                    <ImageBackground source={{uri:'custom_scan_qr_bg'}} style={{alignItems:'center',justifyContent:'center',width:230*2,height:230*2}}>
+                        <Image source={{uri:'file:////storage/emulated/0/LaidianClient/QR_CODE/brand_000040000672'}} style={{width:210*1.4,height:210*1.4}}/>
+                    </ImageBackground>
+
                     <Text style={styles.welcome}>
                         RN的界面
                     </Text>
                     <Text style={styles.welcome}>
-                        原生传来的数据name:-> {NativeModules.IntentModule.name}
+                        原生传来的数据name:-> {user.name}
                     </Text>
                     <Text style={styles.welcome}>
-                        原生传来的数据msg:-> {NativeModules.IntentModule.msg}
+                        原生传来的数据msg:-> {user.msg}
                     </Text>
                     <Button
                         title='Toast'

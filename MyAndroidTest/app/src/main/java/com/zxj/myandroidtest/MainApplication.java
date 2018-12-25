@@ -3,6 +3,7 @@ package com.zxj.myandroidtest;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
@@ -13,6 +14,8 @@ import java.util.List;
 
 public class MainApplication extends Application implements ReactApplication {
   private static MainApplication application;
+  private ReactInstanceManager mReactInstanceManager;
+
   private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {
     @Override
     public boolean getUseDeveloperSupport() {
@@ -44,6 +47,13 @@ public class MainApplication extends Application implements ReactApplication {
   public void onCreate() {
     super.onCreate();
     application = this;
+    mReactInstanceManager = mReactNativeHost.getReactInstanceManager();
+    //JsBundle是在createReactContextInBackground()中加载的，所以优先先在这里加载，会大大加快RN的启动速度
+    mReactInstanceManager.createReactContextInBackground();
     SoLoader.init(this, /* native exopackage */ false);
+  }
+
+  public ReactInstanceManager getReactInstanceManager(){
+    return mReactInstanceManager;
   }
 }

@@ -31,6 +31,13 @@
         tools:layout_editor_absoluteY="114dp" />
 
     <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onSkipRnClick"
+        android:text="跳转自定义ReactActivity界面"
+        tools:layout_editor_absoluteX="203dp"
+        tools:layout_editor_absoluteY="114dp" />
+    <Button
         android:id="@+id/button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

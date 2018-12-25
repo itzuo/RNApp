@@ -22,3 +22,5 @@
 8. 混合开发中实现原生传入的参数跳转不同RN界面
 
 ![app.gif](./img/navigation-reset.gif)
+
+8. 解决activity启动RN白屏现象
