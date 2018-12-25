@@ -25,8 +25,8 @@ public class MainApplication extends Application implements ReactApplication {
     @Override
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
-          new MainReactPackage(),
-          new CustomPackage()); // <-- 添加这一行，类名替换成你的Package类的名字.
+              new MainReactPackage(),
+              new CustomPackage()); // <-- 添加这一行，类名替换成你的Package类的名字.
     }
 
     @Override
